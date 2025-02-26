@@ -14,6 +14,8 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 import { ModeToggle } from "@/components/ModeToggle"
+import Link from "next/link"
+import {button, buttonVariants} from "@/components/ui/button"
 
 export default function Home() {
   return (
@@ -42,6 +44,9 @@ export default function Home() {
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
+          <div className="flex flex-1 items-end justify-end gap-4 p-4">
+          <Link href ="/login" className={"items-end",buttonVariants({ variant: "customblue" })}>Log in!</Link>
+          </div>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4">
             <h1>This is the config page</h1>
