@@ -35,7 +35,7 @@ export default function Home() {
             </BreadcrumbList>
           </Breadcrumb>
           <div className="flex flex-1 items-end justify-end gap-4 p-4">
-          <Link href ="/login" className={"items-end",buttonVariants({ variant: "customblue" })}>Log in</Link>
+          <Link href ="/login" className={"items-end",buttonVariants({ variant: "customblue" })}>Log in!</Link>
           </div>
         </header>
         <div className="flex flex-1 gap-4 p-4 items-center justify-center">
