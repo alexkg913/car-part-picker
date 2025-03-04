@@ -16,6 +16,7 @@ import {
 import { ModeToggle } from "@/components/ModeToggle"
 import {button,buttonVariants} from "@/components/ui/button"
 import Link from "next/link"
+import Image from 'next/image'
 
 export default function Home() {
   return (

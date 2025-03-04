@@ -18,6 +18,7 @@ import { Part, columns } from "@/app/parts-table/brake-parts/columns"
 import { DataTable } from "@/app/parts-table/brake-parts/data-table"
 import {button,buttonVariants} from "@/components/ui/button"
 import Link from "next/link"
+import Image from 'next/image'
 
 async function getData(): Promise<Part[]> {
   return [
