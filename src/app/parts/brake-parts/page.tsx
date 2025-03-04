@@ -50,6 +50,15 @@ export default async function Home() {
         <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger className="-ml-1" />
           <Separator orientation="vertical" className="mr-2 h-4" />
+           <div className="flex items-start">
+             <Image
+            src="/CPP.svg"
+            width={240}
+            height={120}
+            alt="RKM"
+            />
+        </div>
+          <Separator orientation="vertical" className="mr-2 h-4" />
           <Breadcrumb>
             <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
