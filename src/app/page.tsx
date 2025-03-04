@@ -49,7 +49,7 @@ export default function Home() {
         </header>
         <div className="flex flex-1 gap-4 p-4 items-center justify-center">
              <Image
-            src="/rkm.png"
+            src="/CPP.svg"
             width={1280}
             height={720}
             alt="RKM"
