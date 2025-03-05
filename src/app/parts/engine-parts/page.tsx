@@ -28,9 +28,9 @@ export default function Home() {
           <Separator orientation="vertical" className="mr-2 h-4" />
            <div className="flex items-start">
              <Image
-            src="/CPP.svg"
-            width={240}
-            height={120}
+            src="/CPP-Letter.png"
+            width={160}
+            height={80}
             alt="RKM"
             />
         </div>

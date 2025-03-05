@@ -17,6 +17,7 @@ import { ModeToggle } from "@/components/ModeToggle"
 import { TabsDemo } from "@/components/tabs-gti"
 import {button,buttonVariants} from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Home() {
   return (
@@ -25,6 +26,15 @@ export default function Home() {
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger className="-ml-1" />
+          <Separator orientation="vertical" className="mr-2 h-4" />
+           <div className="flex items-start">
+             <Image
+            src="/CPP-Letter.png"
+            width={160}
+            height={80}
+            alt="RKM"
+            />
+        </div>
           <Separator orientation="vertical" className="mr-2 h-4" />
           <Breadcrumb>
             <BreadcrumbList>
