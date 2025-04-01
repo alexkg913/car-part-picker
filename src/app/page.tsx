@@ -17,6 +17,8 @@ import {
 } from "@/components/ui/sidebar"
 import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
+import { getUsers } from "@/utils/users"
+import { useEffect } from "react";
 
 
 export default function Home() {

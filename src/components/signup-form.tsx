@@ -1,15 +1,30 @@
+"use client"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { signup } from "@/app/login/actions"
+import { useState } from "react";
 
 export function SignUpForm({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<"form">) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError("");
+        try {
+          await createUserWithEmailAndPassword(auth, email, password);
+          // Handle successful signup (e.g., redirect to home page)
+        } catch (err) {
+          setError(err.message);
+        }
+      };
   return (
-    <form action={signup} className={cn("flex flex-col gap-6", className)} {...props}>
+    <form onSubmit={handleSubmit} className={cn("flex flex-col gap-6", className)} {...props}>
       <div className="flex flex-col items-center gap-2 text-center">
         <h1 className="text-2xl font-bold">Sign up for an account</h1>
         <p className="text-balance text-sm text-muted-foreground">
@@ -19,13 +34,13 @@ export function SignUpForm({
       <div className="grid gap-6">
         <div className="grid gap-2">
           <Label htmlFor="email">Email</Label>
-          <Input id="email" type="email" placeholder="m@example.com" required />
+          <Input id="email" type="email" placeholder="m@example.com" onChange={(e) => setEmail(e.target.value)} required />
         </div>
         <div className="grid gap-2">
           <div className="flex items-center">
             <Label htmlFor="password">Password</Label>
           </div>
-          <Input id="password" type="password" required />
+          <Input id="password" type="password" onChange={(e) => setPassword(e.target.value)} required />
         </div>
         <Button type="submit" className="w-full">
           Sign Up
