@@ -61,6 +61,7 @@ export default {
   				ring: 'hsl(var(--sidebar-ring))'
   			},
             blue: "hsl(var(--blue))",
+            blue2: "hsl(var(--blue-muted))",
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

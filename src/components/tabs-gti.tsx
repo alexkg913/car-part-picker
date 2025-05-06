@@ -30,13 +30,13 @@ export function TabsDemo() {
           <CardHeader>
             <CardTitle>Stage 1</CardTitle>
             <CardDescription>
-             This is a list of bolt-ons required for stage 1 on a GTI
+             This is a list of bolt-ons required for stage 1 on a VW/Audi MQB car
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
             Cold Air Intake (Optional)
             <br/>
-            Downpipe (Not Supported)
+            High Flow or Catless Downpipe (Not Supported)
             <br/>
             Colder spark plugs (Highly Recomended)
             <br/>
@@ -45,6 +45,8 @@ export function TabsDemo() {
             Turbo Muffler Delete (Optional)
             <br/>
             Upgraded Clutch or DSG Tune (Optional)
+            <br/>
+            Upgraded HPFP or Multi Port Injection (For E85 fuel, otherwise, it is optional)
             <br/>
           </CardContent>
           <CardFooter>
@@ -57,7 +59,7 @@ export function TabsDemo() {
           <CardHeader>
             <CardTitle>Stage 2</CardTitle>
             <CardDescription>
-              This is a list of bolt-ons required for stage 2 on a GTI
+              This is a list of bolt-ons required for stage 2 on a VW/Audi MQB car
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
@@ -73,6 +75,8 @@ export function TabsDemo() {
             <br/>
             Upgraded Clutch or DSG Tune
             <br/>
+            Upgraded HPFP or Multi Port Injection (For E85 fuel, otherwise, it is optional)
+            <br/>
           </CardContent>
           <CardFooter>
             Always consult your tuner for their own specific requirements.
@@ -84,7 +88,7 @@ export function TabsDemo() {
           <CardHeader>
             <CardTitle>Stage 3</CardTitle>
             <CardDescription>
-              This is a list of bolt-ons required for stage 3 on a GTI
+              This is a list of bolt-ons required for stage 3 on a VW/Audi MQB car
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
@@ -102,6 +106,8 @@ export function TabsDemo() {
             <br/>
             Upgraded Turbo
             <br/>
+            Upgraded HPFP or Multi Port Injection (For E85 fuel, otherwise, it is optional)
+            <br/>
           </CardContent>
           <CardFooter>
             Always consult your tuner for their own specific requirements.
@@ -113,7 +119,7 @@ export function TabsDemo() {
           <CardHeader>
             <CardTitle>Max Effort</CardTitle>
             <CardDescription>
-              This is what is considered "Max Effort" or FBO for a GTI
+              This is what is considered "Max Effort" or FBO for a VW/Audi MQB car
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">

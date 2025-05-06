@@ -19,6 +19,17 @@ import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
 import { getUsers } from "@/utils/users"
 import { useEffect } from "react";
+import {firebaseConfig, db, app} from "@/lib/firebase/firebase"
+import { doc, setDoc } from "firebase/firestore";
+
+await setDoc(doc(db, "brake-parts", "part1"),{
+  name:"RacingLine Big Brake Kit",
+  type:"BBK",
+  manufacturer:"RacingLine",
+  price: 3684.03,
+  link: "https://www.urotuning.com/products/racingline-big-brake-stage-3-kit-for-vw-audi-mqb-355mm-vwr650001?currency=USD&variant=14412923142199&stkn=334b6bf4d9c9&utm_content=&utm_term=&ran=oBX&gad_source=1",
+});
+
 
 
 export default function Home() {
