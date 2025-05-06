@@ -32,6 +32,9 @@ import {
 } from "@/components/ui/sidebar"
 import Link from "next/link"
 import { getAuth, signOut } from 'firebase/auth';
+import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+
 
 export function NavUser({
     user,
@@ -44,6 +47,7 @@ export function NavUser({
 }) {
     const { isMobile } = useSidebar()
     const auth = getAuth();
+    const router = useRouter();
 
     const handleLogout = async () => {
         try {
@@ -51,6 +55,9 @@ export function NavUser({
         } catch (error) {
             console.error("Error signing out: ", error);
         }
+    };
+    const handleAccount = () => {
+        router.push('/account'); // Use router.push for client-side navigation
     };
 
     return (
@@ -99,17 +106,9 @@ export function NavUser({
                         {user.email ? (
                             <>
                                 <DropdownMenuGroup>
-                                    <DropdownMenuItem>
+                                    <DropdownMenuItem onClick={handleAccount}>
                                         <BadgeCheck />
                                         Account
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem>
-                                        <CreditCard />
-                                        Billing
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem>
-                                        <Bell />
-                                        Notifications
                                     </DropdownMenuItem>
                                 </DropdownMenuGroup>
                                 <DropdownMenuSeparator />

@@ -1,9 +1,8 @@
     import { initializeApp } from "firebase/app";
     import { getAuth } from "firebase/auth";
     import { getFirestore, doc, setDoc } from "firebase/firestore";
-    // Add other Firebase services you need, e.g., firestore, storage
 
-    const firebaseConfig = {
+    export const firebaseConfig = {
       apiKey: "AIzaSyBTJYdSzIr6HZ_Mj4kl8cLheTOXHtXF4JY",
       authDomain: "car-part-picker-b6718.firebaseapp.com",
       projectId: "car-part-picker-b6718",
