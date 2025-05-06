@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react";
-import { auth, db } from "@/lib/firebase/firebase"; // Import db
+import { auth, db } from "@/lib/firebase/firebase"
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { redirect } from 'next/navigation';
-import { doc, setDoc } from 'firebase/firestore'; // Import Firestore functions
+import { doc, setDoc } from 'firebase/firestore';
 
 export function SignUpForm({
     className,
@@ -16,7 +16,7 @@ export function SignUpForm({
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const [isLoading, setIsLoading] = useState(false); // Add loading state
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

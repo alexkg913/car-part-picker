@@ -4,16 +4,15 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState, useEffect } from "react";
-import { auth, db } from "@/lib/firebase/firebase"; // Import db
+import { auth, db } from "@/lib/firebase/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { redirect } from 'next/navigation';
-import { doc, getDoc, setDoc } from 'firebase/firestore'; // Import Firestore functions
+import { doc, getDoc, setDoc } from 'firebase/firestore'; 
 
 export function SignInForm({
     className,
     ...props
 }: React.ComponentPropsWithoutRef<"form">) {
-<<<<<<< HEAD
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -105,7 +104,6 @@ export function SignInForm({
             {error && <p className="text-red-500 text-sm">{error}</p>}
         </form>
     );
-=======
   return (
     <form action={'#'} className={cn("flex flex-col gap-6", className)}  {...props}>
       <div className="flex flex-col items-center gap-2 text-center">
@@ -157,5 +155,4 @@ export function SignInForm({
       </div>
     </form>
   )
->>>>>>> fb30c4acff818beead4bf473a32d2abf00b4b93f
 }
