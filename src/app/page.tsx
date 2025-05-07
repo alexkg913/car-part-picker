@@ -19,8 +19,10 @@ import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
 import { getUsers } from "@/utils/users"
 import { useEffect } from "react";
-import {firebaseConfig, db, app} from "@/lib/firebase/firebase"
+import {firebaseConfig, db, app,auth} from "@/lib/firebase/firebase"
 import { doc, setDoc } from "firebase/firestore";
+import { useState } from "react";
+import { onAuthStateChanged, User} from "firebase/auth"
 
 await setDoc(doc(db, "brake-parts", "part1"),{
   name:"RacingLine Big Brake Kit",
@@ -33,6 +35,17 @@ await setDoc(doc(db, "brake-parts", "part1"),{
 
 
 export default function Home() {
+  const [user, setUser] = useState<User | null>(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+            setLoading(false);
+        });
+
+        return () => unsubscribe();
+    }, []);
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -57,7 +70,13 @@ export default function Home() {
             </BreadcrumbList>
           </Breadcrumb>
           <div className="flex flex-1 items-end justify-end gap-4 p-4">
-          <Link href ="/login" className={"items-end",buttonVariants({ variant: "customblue" })}>Log in!</Link>
+          <div className="flex flex-1 items-end justify-end gap-4 p-4">
+                        {loading ? (
+                            <div>Loading...</div>
+                        ) : user ? null : (
+                            <Link href="/login" className={"items-end", buttonVariants({ variant: "customblue" })}>Log in!</Link>
+                        )}
+                    </div>
           </div>
         </header>
         <div className="flex flex-1 gap-4 p-4 items-center justify-center">
