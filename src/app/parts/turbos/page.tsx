@@ -71,8 +71,7 @@ export default function Home() {
             try {
                 setDataLoading(true);
                 setError(null);
-                // Using "brake_parts" as per the immersive artifact
-                const partsCollectionRef = collection(db, "engine-build-parts");
+                const partsCollectionRef = collection(db, "turbochargers");
                 const querySnapshot = await getDocs(partsCollectionRef);
 
                 const fetchedParts: Part[] = querySnapshot.docs.map((doc: QueryDocumentSnapshot<DocumentData>) => {
@@ -82,7 +81,7 @@ export default function Home() {
                         part_Name: data.name,
                         manufacturer: data.manufacturer,
                         price: data.price,
-                        link: data.url || "#", // Using field names from immersive
+                        link: data.url || "#",
                     };
                 });
 

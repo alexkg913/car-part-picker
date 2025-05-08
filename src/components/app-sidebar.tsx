@@ -41,6 +41,18 @@ const data = {
                     url: "../parts/engine-parts",
                 },
                 {
+                    title: "Downpipes",
+                    url: "../parts/downpipes",
+                },
+                {
+                    title: "Intakes",
+                    url: "../parts/intakes",
+                },
+                {
+                    title: "Turbo Parts",
+                    url: "../parts/turbos",
+                },
+                {
                     title: "Suspension Parts",
                     url: "../parts/suspension-parts",
                 },
@@ -48,6 +60,18 @@ const data = {
                     title: "Brake Parts",
                     url: "../parts/brake-parts",
                 },
+                {
+                    title: "Wheels",
+                    url: "../parts/wheels",
+                },
+                {
+                    title: "Exhaust Systems",
+                    url: "../parts/exhaust-systems",
+                },
+                {
+                    title: "Miscellanious Parts",
+                    url: "../parts/misc-parts",
+                }
             ],
         },
         {
@@ -105,10 +129,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     return (
         <Sidebar {...props}>
             <SidebarHeader>
-                <VersionSwitcher
-                    cars={data.cars}
-                    defaultCar={data.cars[0]}
-                />
             </SidebarHeader>
             <SidebarContent>
                 {data.navMain.map((item) => (
