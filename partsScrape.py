@@ -44,7 +44,7 @@ CATEGORY_KEYWORDS = {
     "Tunes": ["Tune", "Software", "ECU Upgrade", "TCU Upgrade", "Flashing"],
     "Wheels": ["Wheel", "Forged", "Flowform"],
     "Brake Parts": ["Brake", "Rotor", "Pad", "Caliper", "Big Brake Kit"],
-    "Intakes": ["Intake", "Air Intake", "Cold Air Intake", "Insuction Bundle", "Airbox", "Filter"],
+    "Intakes": ["Intake", "Air Intake", "Cold Air Intake", "Insuction Bundle", "Airbox", "Air Filter"],
     "Turbochargers": ["Turbo", "Turbocharger", "Hybrid Turbo", "Turbo Inlet", "Turbo Muffler Delete"],
     "Engine build parts": ["Piston", "Rod", "Connecting Rod", "Valve", "Valve Spring", "Camshaft", "Engine Build", "Internal"],
     "Suspension parts": ["Suspension", "Springs", "Lowering Springs", "Coilover", "Sway Bar", "End Link", "Control Arm", "Trailing Arm", "Toe Link", "Mount", "Insert", "Bushings", "Strut", "Shock", "Camber Plate", "Subframe", "Brace"],
