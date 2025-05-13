@@ -54,9 +54,8 @@ const AccountSettingsPage = () => {
     useEffect(() => {
         const fetchUserData = async () => {
             if (!user) {
-                console.log("User is not logged in."); // Add this line
-                // Redirect to login if not authenticated
-                return; //  Removed: redirect('/');
+                console.log("User is not logged in.");
+                return; 
             }
             setIsLoading(true);
             try {
@@ -97,7 +96,6 @@ const AccountSettingsPage = () => {
         }
 
         try {
-            // 2. Update Firestore User Document
             const userRef = doc(db, 'users', user.uid);
             const updateData: Partial<UserData> = {
                 username: newUsername,
@@ -105,11 +103,10 @@ const AccountSettingsPage = () => {
             };
 
             await setDoc(userRef, {
-                ...userData, //keep existing data
+                ...userData, 
                 ...updateData
             });
 
-            // 3. Update Firebase Auth Profile (if display name changed) - Removed.  FirebaseAuth profile is not used.
             if (newUsername !== userData?.username) {
                 await updateProfile(user, {
                     displayName: newUsername,
@@ -186,7 +183,6 @@ const AccountSettingsPage = () => {
             </BreadcrumbList>
           </Breadcrumb>
           <div className="flex flex-1 items-end justify-end gap-4 p-4">
-          <Link href ="/login" className={"items-end",buttonVariants({ variant: "customblue" })}>Log in!</Link>
           </div>
         </header>
        <div className="container mx-auto p-4">
