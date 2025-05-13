@@ -46,7 +46,7 @@ const AccountSettingsPage = () => {
     const [newBio, setNewBio] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const [isEditing, setIsEditing] = useState(false); // Track editing state
+    const [isEditing, setIsEditing] = useState(false); 
 
 
     const user = auth.currentUser;
@@ -59,20 +59,20 @@ const AccountSettingsPage = () => {
             }
             setIsLoading(true);
             try {
-                console.log("Fetching user data for UID:", user.uid); // Add this line
+                console.log("Fetching user data for UID:", user.uid);
                 const userRef = doc(db, 'users', user.uid);
                 const userDoc = await getDoc(userRef);
                 if (userDoc.exists()) {
-                    console.log("User data found:", userDoc.data()); // Add this line
+                    console.log("User data found:", userDoc.data());
                     setUserData(userDoc.data() as UserData);
                     setNewUsername(userDoc.data().username || "");
                     setNewBio(userDoc.data().bio || "");
                 } else {
-                    console.log("User document does not exist in Firestore."); // Add this line
+                    console.log("User document does not exist in Firestore.");
                     setError("User data not found.");
                 }
             } catch (err: any) {
-                console.error("Error fetching user data:", err); // Add this line
+                console.error("Error fetching user data:", err);
                 setError(err.message);
             } finally {
                 setIsLoading(false);
