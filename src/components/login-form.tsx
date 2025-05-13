@@ -35,7 +35,7 @@ export function SignInForm({
                     uid: user.uid,
                     email: user.email,
                     username: username,
-                    profilePicture: null, // Store null for profile picture
+                    profilePicture: null,
                 });
                 console.log("User document created with username:", username, "and null profile picture");
             } else {
@@ -47,10 +47,10 @@ export function SignInForm({
                   });
                   console.log("Username added to existing user doc:", username);
                 }
-                if (userData.profilePicture === undefined) { //check if profilePicture field exists
+                if (userData.profilePicture === undefined) { 
                     await setDoc(userRef, {
                         ...userData,
-                        profilePicture: null, // Add profilePicture field with null value
+                        profilePicture: null,
                     });
                     console.log("profilePicture field added and set to null");
                 }

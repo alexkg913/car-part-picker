@@ -117,16 +117,14 @@ export default function Home() {
 
     const requestSort = (key: SortableKeys) => {
         let direction: 'asc' | 'desc' = 'asc';
-        // If same key is clicked, toggle direction. Otherwise, default to 'asc' for new key.
-        // For price, default to desc. For name, default to asc.
         if (sortConfig.key === key) {
-            if (key === 'price') { // Toggle for price
+            if (key === 'price') {
                 direction = sortConfig.direction === 'desc' ? 'asc' : 'desc';
-            } else { // Toggle for name
+            } else {
                  direction = sortConfig.direction === 'asc' ? 'desc' : 'asc';
             }
         } else {
-            direction = key === 'price' ? 'desc' : 'asc'; // Default directions
+            direction = key === 'price' ? 'desc' : 'asc';
         }
         setSortConfig({ key, direction });
     };
@@ -213,11 +211,9 @@ export default function Home() {
                     {dataLoading && <p className="text-center">Loading parts data...</p>}
                     {error && <p className="text-center text-red-500">{error}</p>}
                     {!dataLoading && !error && (
-                        // Pass the sorted data to the DataTable
                         <DataTable columns={columns} data={sortedPartsData} />
                     )}
                     {!dataLoading && !error && sortedPartsData.length === 0 && partsData.length > 0 && (
-                         // This case should ideally not happen if partsData has items and sortedPartsData is derived
                         <p className="text-center">No results for current sort.</p>
                     )}
                     {!dataLoading && !error && partsData.length === 0 && (

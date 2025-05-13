@@ -56,7 +56,6 @@ interface Part {
     manufacturer: string;
     model_designator: string;
     url: string;
-    // Assuming these fields might exist or filtering will rely on name parsing
     compatible_turbos?: string[];
     compatible_transmissions?: string[];
 }
@@ -194,7 +193,6 @@ const AutomotiveBuildConfigurator = () => {
         setTotalPrice(newTotalPrice);
     }, [selectedParts]);
 
-    // Reset tune filters when car changes
     useEffect(() => {
         setSelectedTurbo(TURBO_OPTIONS[0]);
         setSelectedTransmission(TRANSMISSION_OPTIONS[0]);
@@ -293,7 +291,6 @@ const AutomotiveBuildConfigurator = () => {
 
     const handleCategorySelect = (categoryValue: string) => {
         setActiveCategory(categoryValue);
-        // Reset tune filters if selecting a category other than tunes
         if (categoryValue !== 'tunes') {
              setSelectedTurbo(TURBO_OPTIONS[0]);
              setSelectedTransmission(TRANSMISSION_OPTIONS[0]);
@@ -315,7 +312,6 @@ const AutomotiveBuildConfigurator = () => {
         });
     };
 
-    // Helper function to filter tunes based on dropdown selections
     const filterTunes = (parts: Part[]): Part[] => {
         return parts.filter(part => {
             const turboMatch = selectedTurbo === 'All' ||
@@ -369,7 +365,6 @@ const AutomotiveBuildConfigurator = () => {
                         <Select value={selectedCar} onValueChange={(value) => {
                             setSelectedCar(value);
                             setActiveCategory(null);
-                            // Reset selected parts when car changes
                             setSelectedParts({});
                         }}>
                             <SelectTrigger className="w-[220px] bg-background text-foreground">
@@ -429,9 +424,8 @@ const AutomotiveBuildConfigurator = () => {
                                 <div className="part-selection md:col-span-6 overflow-y-auto max-h-[calc(100vh-12rem)] bg-card p-3 rounded-md border">
                                     {activeCategory ? (
                                         categorizedParts
-                                            .filter(cat => cat.value === activeCategory) // Only process the active category
+                                            .filter(cat => cat.value === activeCategory)
                                             .map((category) => {
-                                                // Filter parts specifically for the 'tunes' category
                                                 const partsToDisplay = category.value === 'tunes'
                                                     ? filterTunes(category.parts)
                                                     : category.parts;

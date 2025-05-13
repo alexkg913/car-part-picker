@@ -16,8 +16,8 @@ import {
 } from "@/components/ui/sidebar";
 import { ModeToggle } from "@/components/ModeToggle";
 import { NavUser } from "@/components/nav-user";
-import { getAuth, onAuthStateChanged } from 'firebase/auth'; // Import Firebase Auth
-import { doc, getDoc, getFirestore } from 'firebase/firestore';  // Import Firestore
+import { getAuth, onAuthStateChanged } from 'firebase/auth'; 
+import { doc, getDoc, getFirestore } from 'firebase/firestore';  
 
 const data = {
     cars: ["VW/Audi MQB AWD", "VW/Audi MQB FWD"],
@@ -97,10 +97,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     const db = getFirestore();
 
     useEffect(() => {
-        const auth = getAuth(); // Initialize Firebase Auth
+        const auth = getAuth();
         const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => { 
             if (firebaseUser) {
-                let username = firebaseUser.displayName || "User"; // Default
+                let username = firebaseUser.displayName || "User";
                 const userRef = doc(db, 'users', firebaseUser.uid);
                 const userDoc = await getDoc(userRef); 
 
